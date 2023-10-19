@@ -1,0 +1,5 @@
+const BLOCK_SIZE = 24;
+const GAME_WIDTH = 10;
+const GAME_HEIGHT = 20;
+
+export {BLOCK_SIZE, GAME_WIDTH, GAME_HEIGHT}
