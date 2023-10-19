@@ -83,7 +83,7 @@ const draw = () => {
 const drawBoard = () => {
   ctx.fillStyle = 'black';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  drawShape(ctx, game, {x: 0, y: 0});
+  drawShape(ctx, game, {x: 0, y: 0}, true);
 }
 
 const drawNextShape = () => {

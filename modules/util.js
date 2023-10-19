@@ -2,13 +2,13 @@ import { COLORS } from "./pieces";
 
 const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const drawShape = (ctx, shape, {x: offsetX, y: offsetY}) => {
+const drawShape = (ctx, shape, {x: offsetX, y: offsetY}, inmovilized) => {
     if(!shape) return;
     shape.forEach((row, y) => {
         row.forEach((value, x) => {
             if(value > 0) {
-                const [_, inmovilizedColor] = COLORS[value - 1];
-                ctx.fillStyle = inmovilizedColor;
+                const [color, inmovilizedColor] = COLORS[value - 1];
+                ctx.fillStyle = inmovilized ? inmovilizedColor: color;
                 ctx.fillRect(x + offsetX, y + offsetY, 1, 1);
             }
         });
