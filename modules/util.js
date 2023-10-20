@@ -15,6 +15,16 @@ const drawShape = (ctx, shape, {x: offsetX, y: offsetY}, inmovilized) => {
     });
 }
 
+const drawMiniShape = (ctx, canvas, shape) => {
+  
+  ctx.fillStyle = 'black';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  if(!shape) return
+  const x = (5 - shape[0].length) / 2;
+  const y = (6 - shape.length) / 2;
+  drawShape(ctx, shape, {x, y});
+}
+
 const rotateShape = (shape) => {
   if(!shape) return;
   let rotated = [];
@@ -27,4 +37,4 @@ const rotateShape = (shape) => {
   });
   return rotated;
 }
-export {random, drawShape, rotateShape}
+export {random, drawShape, rotateShape, drawMiniShape}
